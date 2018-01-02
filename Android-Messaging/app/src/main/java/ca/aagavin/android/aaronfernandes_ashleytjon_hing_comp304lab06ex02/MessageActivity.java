@@ -1,12 +1,15 @@
 package ca.aagavin.android.aaronfernandes_ashleytjon_hing_comp304lab06ex02;
 
 
+import android.Manifest;
 import android.app.Activity;
 import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.telephony.SmsManager;
@@ -51,6 +54,11 @@ public class MessageActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_message);
+
+        ActivityCompat.requestPermissions(this,
+                new String[]{Manifest.permission.SEND_SMS},123);
+
+
         Bundle extras = getIntent().getExtras();
         String contactName="";
         if(extras != null)
@@ -180,22 +188,21 @@ public class MessageActivity extends Activity {
     public boolean
     onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is
-        present.getMenuInflater().inflate(R.menu.menu_message, menu);
+//        present.getMenuInflater().inflate(R.menu.menu_message, menu);
         return true;
     }
 
 
     @Override
-    public boolean
-    onOptionsItemSelected(MenuItem item) {
+    public boolean onOptionsItemSelected(MenuItem item) {
     // Handle action bar item clicks here. The action bar will
     // automatically handle clicks on the Home/Up button, so long
     // as you specify a parent activity in AndroidManifest.xml.
-    int id = item.getItemId();
-    //noinspection SimplifiableIfStatement
-        if(id == R.id.action_settings) {
-            return true;
-        }
+//    int id = item.getItemId();
+//    //noinspection SimplifiableIfStatement
+//        if(id == R.id.action_settings) {
+//            return true;
+//        }
         return super.onOptionsItemSelected(item);
     }
 }
