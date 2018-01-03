@@ -53,7 +53,7 @@ public class MainActivity extends Activity {
     public void getInfo(View view) {
         //keep in mind your AVD should support Google API
         //
-        String strUrl = "http://maps.googleapis.com/maps/api/directions/json?";
+        String strUrl = "https://maps.googleapis.com/maps/api/directions/json?";
         //
         List<Address> geoCodes = null;
         //get the start point from the edit text startPoint
@@ -108,13 +108,14 @@ public class MainActivity extends Activity {
             System.out.println("Time: " + String.valueOf(l));
             String departureTimeValue = URLEncoder.encode(String.valueOf(l), "UTF-8");
             System.out.println(departureTimeValue);
-            String departureTime = "departure_time=" + departureTimeValue;
+            //String departureTime = "departure_time=" + departureTimeValue;
             //
             String modeValue = URLEncoder.encode("transit", "UTF-8");
             String mode = "mode=" + modeValue;
 
             //create the url
-            strUrl = strUrl + origine + "&" + destination + "&" + sensor + "&" + departureTime + "&" + mode;
+            //strUrl = strUrl + origine + "&" + destination + "&" + sensor + "&" + departureTime + "&" + mode;
+            strUrl = strUrl + origine + "&" + destination + "&" + sensor + "&" + mode;
             System.out.println(strUrl);
             Log.i("url", strUrl);
             new ReadTransitJSONFeedTask().execute(strUrl);
