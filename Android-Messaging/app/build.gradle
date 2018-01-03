@@ -5,7 +5,7 @@ android {
     defaultConfig {
         applicationId "ca.aagavin.android.aaronfernandes_ashleytjon_hing_comp304lab06ex02"
         minSdkVersion 23
-        targetSdkVersion 26
+        targetSdkVersion 23
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"

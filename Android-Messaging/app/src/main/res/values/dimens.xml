@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="margintop">75dp</dimen>
+    <dimen name="textview_height">200dp</dimen>
+    <dimen name="margintop_layout">250dp</dimen>
+    <dimen name="layout_width">100dp</dimen>
+    <dimen name="button_width">50dp</dimen>
+</resources>
